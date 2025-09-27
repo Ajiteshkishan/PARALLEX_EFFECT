@@ -1,0 +1,118 @@
+/* Reset default margins, padding, and set box-sizing */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Wrapper for full viewport height, hides horizontal overflow, 3D perspective */
+#wrapper{
+    height:100vh;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+/* Container for center alignment and 3D effect */
+.container{
+    position:relative;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d; /* preserve 3D transforms for children */
+    z-index: -1;
+}
+
+/* Background layer further in 3D space and scaled */
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+
+/* Foreground layer closer than background */
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+
+/* Common styles for background & foreground images */
+.background, .foreground{
+    position:absolute;
+    height:100%;
+    width:100%;
+    object-fit: cover; /* cover entire container */
+    z-index:-1;
+}
+
+/* Main heading styling */
+h1{
+    position: absolute;
+    top:4rem; /* distance from top */
+    font-size:8rem;
+    letter-spacing:4px;
+    color:rgb(42, 62, 29);
+    font-style: italic;
+   
+    text-shadow: 10px 10px 10px rgba(40, 158, 172, 0.3); /* shadow effect */
+}
+
+/* Secondary heading styling, background only behind text */
+.secheading {        
+    font-size: 40px;
+    color: rgb(16, 17, 17);
+    background-color: rgb(226, 231, 208); /* highlight behind text */
+    font-weight: 600;
+    display: inline-block;       /* shrink width to text */
+    padding: 1rem 1rem;          /* space around text */
+    margin: 0 auto;              /* center horizontally */
+}
+
+/* Section styling with background and padding */
+section{
+    background-color: rgb(45,45,45);
+    color:rgb(249, 234, 234);
+    padding:5rem 0;
+}
+
+/* Paragraph/text styling with spacing */
+.text{
+    font-size:1.5rem;
+    padding: 0 10rem; /* horizontal padding */
+    margin: 5rem ;    /* spacing around element */
+}
+
+/* Background container with fixed parallax effect */
+.bg{
+    position:relative;
+    width:100%;
+    background-attachment: fixed; /* parallax effect */
+    background-position: center;
+    background-size: cover;       /* cover full container */
+    height:500px;
+}
+
+/* Description text positioned at center */
+.desc{
+    position: absolute;
+    background-color: rgb(228, 213, 213);   
+    padding: 1rem 2.5rem;
+    top:50%;
+    left:50%;
+    transform: translateX(-60%) translatey(-50%); /* center adjustment */
+    color:black;
+    font-size:3.5rem;
+    font-weight:600;
+}
+
+/* Background image for section 1 */
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+/* Background image for section 2 */
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+/* Background image for section 3 */
+.bg3{
+    background-image: url(sport-3.jpg);
+}
